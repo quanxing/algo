@@ -11,7 +11,7 @@ public class BracketMatch{
         pair.put('{','}');
     }
     public boolean isMatch(String s){
-       StackBasedLinkedList linkedStack = new StackBasedLinkedList();
+       StackBasedOnLinkedList linkedStack = new StackBasedOnLinkedList();
        System.out.println("-----");
        for(int i = 0; i < s.length(); i++){
             Character ch = s.charAt(i);

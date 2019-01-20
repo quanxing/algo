@@ -4,7 +4,7 @@
  *
  * Author: Zheng
  */
-public class StackBasedLinkedList {
+public class StackBasedOnLinkedList {
   private Node top = null;
 
   public void push(Object value) {
