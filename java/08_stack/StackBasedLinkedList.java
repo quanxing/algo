@@ -1,5 +1,4 @@
-package stack;
-
+//package stack;
 /**
  * 基于链表实现的栈。
  *
@@ -8,7 +7,7 @@ package stack;
 public class StackBasedLinkedList {
   private Node top = null;
 
-  public void push(int value) {
+  public void push(Object value) {
     Node newNode = new Node(value, null);
     // 判断是否栈空
     if (top == null) {
@@ -22,10 +21,27 @@ public class StackBasedLinkedList {
   /**
    * 我用-1表示栈中没有数据。
    */
-  public int pop() {
+  public boolean isEmpty() {
+    if (top == null) return true;
+    else return false;
+  }
+
+  /**
+   * 我用-1表示栈中没有数据。
+   */
+  public Object pop() {
     if (top == null) return -1;
-    int value = top.data;
+    Object value = top.data;
     top = top.next;
+    return value;
+  }
+
+  /**
+   * 我用-1表示栈中没有数据。
+   */
+  public Object peek() {
+    if (top == null) return -1;
+    Object value = top.data;
     return value;
   }
 
@@ -39,16 +55,21 @@ public class StackBasedLinkedList {
   }
 
   private static class Node {
-    private int data;
+    private Object data;
     private Node next;
 
-    public Node(int data, Node next) {
+    public Node(Object data, Node next) {
       this.data = data;
       this.next = next;
     }
 
-    public int getData() {
+    public Object getData() {
       return data;
     }
   }
+  public static void main(String[]args){
+      Node n = new Node("+",null);
+      System.out.println(n.data);
+  }
+
 }
